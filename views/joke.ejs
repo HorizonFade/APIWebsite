@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container m-5">
-        <form action="/" method="POST">
+        <form method="POST">
         <div class="row justify-content-center">
         <div class="col-6">
     <div class="card">
@@ -21,7 +21,9 @@
           <% }else{ %>
             <h5 class="card-title"><%= content.joke %></h5>
             <% } %>
-          <button class="btn btn-primary">New Joke</button>
+            <input type="hidden" name="checkedCat" id="<%= cats %>" value="<%= cats %>">
+          <input type="submit" class="btn btn-primary" value="New Joke" formaction="/joke">
+          <a class="btn btn-primary justify-content-end" href="/" role="button">Change Category</a>
         </div>
       </div>
 </div>
