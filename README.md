@@ -24,7 +24,7 @@ A simple Node.js website built with Express and EJS, utilizing the JokeAPI to fe
 
 3. Start the server:
     ```bash
-    node index.js
+    npm start
     ```
 
 4. Open your browser and navigate to `http://localhost:3000`.
