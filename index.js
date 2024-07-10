@@ -2,15 +2,15 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 
+const port = 1337;
 const app = express();
-const port = 3000;
 const URL_API = "https://v2.jokeapi.dev";
 let URL_CAT = "";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", async (req, res)=>{
+app.get("/jokes", async (req, res)=>{
     try {
         const response = await axios.get(URL_API+"/categories");
         res.render("index.ejs", {content: response.data});
@@ -19,7 +19,7 @@ app.get("/", async (req, res)=>{
     }
 });
 
-app.post("/joke", async (req, res)=>{
+app.post("/jokes/joke", async (req, res)=>{
     if(req.body["checkedCat"] !== undefined){
         if(typeof req.body["checkedCat"]==='string'){
             URL_CAT = req.body["checkedCat"];
