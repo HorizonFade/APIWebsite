@@ -24,9 +24,7 @@ app.post("/joke", async (req, res)=>{
         if(typeof req.body["checkedCat"]==='string'){
             URL_CAT = req.body["checkedCat"];
         }else{
-            req.body["checkedCat"].forEach(cat => {
                 URL_CAT = req.body["checkedCat"].join(",");
-            });
         }
     }else{
         URL_CAT = "Any";
